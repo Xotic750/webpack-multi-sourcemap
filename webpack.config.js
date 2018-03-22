@@ -10,6 +10,8 @@ module.exports = (env = {}) => {
 
     entry: [path.join(__dirname, 'index.js')],
 
+    mode: 'production',
+
     module: {
       rules: [
         {
