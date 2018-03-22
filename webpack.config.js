@@ -22,7 +22,7 @@ module.exports = (env = {}) => {
 
     output: {
       filename: 'index.js',
-      path: path.resolve(__dirname, './dist/Byxelkrok/'),
+      path: path.resolve(__dirname, './dist/'),
       sourceMapFilename: '[file].sentry.map',
     },
 
