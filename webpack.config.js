@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = (env = {}) => {
   return {
@@ -9,6 +9,8 @@ module.exports = (env = {}) => {
     devtool: 'hidden-source-map',
 
     entry: [path.join(__dirname, 'index.js')],
+
+    mode: 'production',
 
     module: {
       rules: [
@@ -27,11 +29,11 @@ module.exports = (env = {}) => {
     },
 
     plugins: [
-      new UglifyJsPlugin({
+      new TerserPlugin({
         parallel: true,
         sourceMap: true,
-        uglifyOptions: {
-          ecma: 8,
+        terserOptions: {
+          ecma: 5,
         },
       }),
 
